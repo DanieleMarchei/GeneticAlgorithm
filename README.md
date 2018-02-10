@@ -27,7 +27,7 @@ while(condition)
   algo.Step();
 }
 
-Console.Wirte(algo.Fittest());
+Console.Write(algo.Fittest());
 ```
 ## Docs
 ### GeneticAlgorithmSettings
