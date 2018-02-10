@@ -8,7 +8,7 @@ namespace GeneticAlgorithm
 {
     class Example
     {
-        //I want to find the integer that bettere appoximate PI * 100
+        //I want to find the integer that better appoximate PI * 100
         const float GOAL = (float)Math.PI * 100;
 
         static void Main(string[] args)
