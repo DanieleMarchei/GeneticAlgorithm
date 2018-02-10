@@ -17,7 +17,7 @@ namespace GeneticAlgorithm
             GeneticAlgorithm<int> algo = new GeneticAlgorithm<int>(settings);
 
             int fittest = algo.Fittest();
-            while (Math.Abs(fittest - GOAL) > 0.5)
+            while (Math.Abs(GOAL - fittest) > 0.5)
             {
                 algo.Step();
 
@@ -34,14 +34,11 @@ namespace GeneticAlgorithm
 
         private class EvolveInt : GeneticAlgorithmSettings<int>
         {
-            private Random r = new Random();
+            public override float MutationRate { get => 0.001f; set => MutationRate = value; }
+            public override uint PopulationSize { get => 50; protected set => PopulationSize = value; }
+            public override uint NumberOfParentsForCrossover { get => 2; protected set => NumberOfParentsForCrossover = value; }
 
-            public EvolveInt()
-            {
-                MutationRate = 0.001f;
-                PopulationSize = 50;
-                NumberOfParentsForCrossover = 2;
-            }
+            private Random r = new Random();
 
             public override int Crossover(params int[] t)
             {

@@ -8,11 +8,11 @@ namespace GeneticAlgorithm
 {
     public abstract class GeneticAlgorithmSettings<T>
     {
-        public float MutationRate { get; set; }
+        public abstract float MutationRate { get; set; }
 
-        public uint PopulationSize { get; protected set; }
+        public abstract uint PopulationSize { get; protected set; }
 
-        public uint NumberOfParentsForCrossover { get; protected set; }
+        public abstract uint NumberOfParentsForCrossover { get; protected set; }
 
         public abstract float Fitness(T t);
 
